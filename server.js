@@ -5,6 +5,10 @@ import createSVG  from './index.js';
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+app.get('/', (req, res) => {
+    res.send('Please add /stats/username to the URL to get GitHub stats.');
+});
+
 app.get('/stats/:username', async (req, res) => {
     const { username } = req.params;
     try {
