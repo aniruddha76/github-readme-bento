@@ -1,6 +1,6 @@
 import express from 'express';
 import axios from 'axios';
-import createSVG  from './index.js';
+import createBentoSVG  from './components/bento.js';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -15,7 +15,7 @@ app.get('/stats/:username', async (req, res) => {
       const response = await axios.get(`https://api.github.com/users/${username}`)
       const data = await response.data;
   
-      const svg = await createSVG(data);
+      const svg = await createBentoSVG(data);
   
       res.setHeader('Content-Type', 'image/svg+xml');
       res.send(svg);
