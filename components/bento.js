@@ -5,9 +5,15 @@ export default async function createBentoSVG(data) {
   let repos = response.data;
 
   let languages = {};
+  let starsEarned = 0;
+
   repos.forEach((repo) => {
     if (repo.language) {
       languages[repo.language] = (languages[repo.language] || 0) + 1;
+    }
+
+    if(repo.stargazers_count != 0){
+      starsEarned += repo.stargazers_count
     }
   });
 
@@ -18,7 +24,7 @@ export default async function createBentoSVG(data) {
   const joinedDate = new Date(data.created_at).toLocaleDateString();
 
   return `
-    <svg width="500" height="270" xmlns="http://www.w3.org/2000/svg">
+    <svg width="429" height="270" xmlns="http://www.w3.org/2000/svg">
       <style>
         .background { fill: #18181b; }
         .text-light { fill: #e5e5e5; font-family: sans-serif; }
@@ -26,9 +32,12 @@ export default async function createBentoSVG(data) {
         .text-bold { font-weight: bold; }
         .border { stroke: white; stroke-width: 1; }
         .rounded { rx: 5; ry: 5; }
+        .star { stroke: white; fill: none; stroke-width: 1; }
       </style>
+
+      <title>${data.name} Github Stats</title>
       
-      <rect x="0" y="0" width="429" height="300" fill="#000" class="border"/>
+      <rect x="0" y="0" width="429" height="270" fill="#000" class="border rounded"/>
       
       <!-- Username and Bio -->
       <rect x="10" y="10" width="409" height="60" class="background rounded"/>
@@ -36,21 +45,27 @@ export default async function createBentoSVG(data) {
       <text x="20" y="55" class="text-light" font-size="14">${data.bio || "No bio available"}</text>
       
       <!-- Profile Image -->
-      <rect x="10" y="80" width="180" height="180" class="background rounded"/>
-      <image href="${data.avatar_url}" x="20" y="90" width="160" height="160" class="rounded"/>
+      // <rect x="10" y="80" width="180" height="180" class="background rounded"/>
+      <image href="${data.avatar_url}" x="10" y="80" width="180" height="180" class="rounded"/>
       
       <!-- Top Languages -->
-      <rect x="200" y="80" width="190" height="120" class="border rounded"/>
+      <rect x="200" y="80" width="220" height="120" class="border rounded"/>
       <text x="210" y="100" class="text-light text-bold" font-size="14">Top Languages:</text>
       ${topLanguages.map((lang, index) => `
-        <rect x="220" y="${110 + index * 20}" width="10" height="10" class="rounded" fill="${getLanguageColor(lang[0])}" />
-        <text x="240" y="${120 + index * 20}" class="text-light" font-size="12">${lang[0]}</text>
+        <rect x="${210 + (index >= 4 ? 90 : 0)}" y="${110 + (index % 4) * 20}" width="10" height="10" class="rounded" fill="${getLanguageColor(lang[0])}" />
+        <text x="${230 + (index >= 4 ? 90 : 0)}" y="${120 + (index % 4) * 20}" class="text-light" font-size="12">${lang[0]}</text>
       `).join('')}
-      
+
+      <!-- Stars Earned -->
+      <rect x="200" y="210" width="120" height="50" class="border rounded"/>
+      <text x="210" y="230" class="text-light text-bold" font-size="14">Total Stars</text>
+      <path d="M215 243 l1.4 -4 l1.2 4 l3.8 0 l-3 2.5 l1 4 l-3 -2.5 l-3 2.5 l1 -4 l-3 -2.5 z" class="star"/>
+      <text x="230" y="250" class="text-light" font-size="12">${starsEarned}</text>
+
       <!-- Joined Date -->
-      <rect x="200" y="210" width="190" height="50" class="background rounded"/>
-      <text x="210" y="230" class="text-light text-bold" font-size="14">Since</text>
-      <text x="210" y="250" class="text-light" font-size="12">${joinedDate}</text>
+      <rect x="330" y="210" width="90" height="50" class="background rounded"/>
+      <text x="340" y="230" class="text-light text-bold" font-size="14">Since</text>
+      <text x="340" y="250" class="text-light" font-size="12">${joinedDate}</text>
     </svg>
   `;
 
