@@ -3,6 +3,10 @@ import axios from "axios";
 export default async function createBentoSVG(data) {
   let response = await axios.get(`https://api.github.com/users/${data.login}/repos?per_page=1000`);
   let repos = response.data;
+  
+  let imageResponse = await axios.get(data.avatar_url, { responseType: 'arraybuffer' });
+  let base64Image = Buffer.from(imageResponse.data, 'binary').toString('base64');
+  let imageSrc = `data:image/png;base64,${base64Image}`;
 
   let languages = {};
   let starsEarned = 0;
@@ -46,7 +50,7 @@ export default async function createBentoSVG(data) {
       
       <!-- Profile Image -->
       // <rect x="10" y="80" width="180" height="180" class="background rounded"/>
-      <image href="${data.avatar_url}" x="10" y="80" width="180" height="180" class="rounded"/>
+      <image href="${imageSrc}" x="10" y="80" width="180" height="180" class="rounded"/>
       
       <!-- Top Languages -->
       <rect x="200" y="80" width="220" height="120" class="border rounded"/>
