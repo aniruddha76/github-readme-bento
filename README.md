@@ -33,12 +33,18 @@ Adding the GitHub README Stats Bento to your profile or website is super simple!
 
 ## Example
 
-Check out this beautiful example of a GitHub README Stats Bento in action:
+Check out these beautiful examples of a GitHub README Stats Bento in action:
 
-![Aniruddha github stats](https://github-readme-bento.vercel.app/stats/aniruddha76)
+- **Light Mode**: This is default theme
+
+   ![Aniruddha github stats](https://github-readme-bento.vercel.app/stats/aniruddha76)
+  
+- **Dark Mode**: To use dark theme add `?theme=Dark` after `username`
+
+   ![Aniruddha github stats](https://github-readme-bento.vercel.app/stats/aniruddha76?theme=dark)
 
 ## Contributing
 
-I welcome contributions! If you have ideas to make this project even better, feel free to open an issue. 
+I welcome contributions! If you have ideas to make this project even better, feel free to open an issue.
 
 Leave a star and let's make GitHub profiles more beautiful, one Bento at a time! 🍱✨
