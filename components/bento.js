@@ -1,6 +1,7 @@
 import axios from "axios";
 
 export default async function createBentoSVG(data) {
+  //used repos per page to get all the repos
   let response = await axios.get(`https://api.github.com/users/${data.login}/repos?per_page=1000`);
   let repos = response.data;
   
