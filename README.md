@@ -41,4 +41,4 @@ Check out this beautiful example of a GitHub README Stats Bento in action:
 
 I welcome contributions! If you have ideas to make this project even better, feel free to open an issue. 
 
-Let's make GitHub profiles more beautiful, one Bento at a time! 🍱✨
+Leave a star and let's make GitHub profiles more beautiful, one Bento at a time! 🍱✨
