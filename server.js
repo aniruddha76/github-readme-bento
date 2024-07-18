@@ -11,11 +11,13 @@ app.get('/', (req, res) => {
 
 app.get('/stats/:username', async (req, res) => {
     const { username } = req.params;
+    const { theme = 'light' } = req.query;
+
     try {
       const response = await axios.get(`https://api.github.com/users/${username}`)
       const data = await response.data;
   
-      const svg = await createBentoSVG(data);
+      const svg = await createBentoSVG(data, theme);
   
       res.setHeader('Content-Type', 'image/svg+xml');
       res.send(svg);
