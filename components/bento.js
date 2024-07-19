@@ -48,14 +48,14 @@ export default async function createBentoSVG(data, theme) {
         .background { fill: ${colors.background}; }
         .text { fill: ${colors.text}; font-family: sans-serif; }
         .text-bold { font-weight: bold; }
-        .border { stroke: white; stroke-width: 1; }
+        // .border { stroke: white; stroke-width: 1; }
         .rounded { rx: 5; ry: 5; }
         .star { stroke: ${colors.text}; fill: none; stroke-width: 1; }
       </style>
 
       <title>${data.name} Github Stats</title>
       
-      <rect x="0" y="0" width="429" height="270" fill="${colors.background}" class="border rounded"/>
+      <rect x="0" y="0" width="429" height="270" fill="${colors.background}" class="rounded"/>
       
       <!-- Username and Bio -->
       <rect x="10" y="10" width="409" height="60" fill="${colors.gridBackground}" class="rounded"/>
