@@ -48,41 +48,57 @@ export default async function createBentoSVG(data, theme) {
         .background { fill: ${colors.background}; }
         .text { fill: ${colors.text}; font-family: sans-serif; }
         .text-bold { font-weight: bold; }
-        // .border { stroke: white; stroke-width: 1; }
         .rounded { rx: 5; ry: 5; }
         .star { stroke: ${colors.text}; fill: none; stroke-width: 1; }
+
+        /* Animation styles */
+        .animate {
+          opacity: 0;
+          animation: fadeIn .7s ease-in-out forwards;
+        }
+
+        .animate-1 { animation-delay: 0.4s; }
+        .animate-2 { animation-delay: 0.6s; }
+        .animate-3 { animation-delay: 0.8s; }
+        .animate-4 { animation-delay: 1s; }
+        .animate-5 { animation-delay: 1.2s; }
+
+        @keyframes fadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
       </style>
 
       <title>${data.name} Github Stats</title>
       
       <rect x="0" y="0" width="429" height="270" fill="${colors.background}" class="rounded"/>
-      
+
       <!-- Username and Bio -->
       <rect x="10" y="10" width="409" height="60" fill="${colors.gridBackground}" class="rounded"/>
-      <text x="20" y="35" class="text text-bold" font-size="18">${data.name}</text>
-      <text x="20" y="55" class="text" font-size="14">${data.bio || "No bio available"}</text>
+      <text x="20" y="35" class="text text-bold animate animate-1" font-size="18">${data.name}</text>
+      <text x="20" y="55" class="text animate animate-1" font-size="14">${data.bio || "No bio available"}</text>
       
       <!-- Profile Image -->
-      <image href="${imageSrc}" x="10" y="80" width="180" height="180" class="rounded"/>
+      <image href="${imageSrc}" x="10" y="80" width="180" height="180" class="rounded animate animate-2"/>
       
       <!-- Top Languages -->
       <rect x="200" y="80" width="220" height="120" fill="${colors.gridBackground}" class="rounded"/>
-      <text x="210" y="100" class="text text-bold" font-size="14">Top Languages:</text>
+      <text x="210" y="100" class="text text-bold animate animate-3" font-size="14">Top Languages:</text>
       ${topLanguages.map((lang, index) => `
-        <rect x="${210 + (index >= 4 ? 90 : 0)}" y="${110 + (index % 4) * 20}" width="10" height="10" class="rounded" fill="${getLanguageColor(lang[0])}" />
-        <text x="${230 + (index >= 4 ? 90 : 0)}" y="${120 + (index % 4) * 20}" class="text" font-size="12">${lang[0]}</text>
+        <rect x="${210 + (index >= 4 ? 90 : 0)}" y="${110 + (index % 4) * 20}" width="10" height="10" class="rounded animate animate-4" fill="${getLanguageColor(lang[0])}" />
+        <text x="${230 + (index >= 4 ? 90 : 0)}" y="${120 + (index % 4) * 20}" class="text animate animate-4" font-size="12">${lang[0]}</text>
       `).join('')}
-
+      
       <!-- Stars Earned -->
       <rect x="200" y="210" width="120" height="50" fill="${colors.gridBackground}" class="rounded"/>
-      <text x="210" y="230" class="text text-bold" font-size="14">Total Stars</text>
-      <path d="M215 243 l1.4 -4 l1.2 4 l3.8 0 l-3 2.5 l1 4 l-3 -2.5 l-3 2.5 l1 -4 l-3 -2.5 z" class="star"/>
-      <text x="230" y="250" class="text" font-size="12">${starsEarned}</text>
+      <text x="210" y="230" class="text text-bold animate animate-5" font-size="14">Total Stars</text>
+      <path d="M215 243 l1.4 -4 l1.2 4 l3.8 0 l-3 2.5 l1 4 l-3 -2.5 l-3 2.5 l1 -4 l-3 -2.5 z" class="star animate animate-5"/>
+      <text x="230" y="250" class="text animate animate-5" font-size="12">${starsEarned}</text>
 
       <!-- Joined Date -->
       <rect x="330" y="210" width="90" height="50" fill="${colors.gridBackground}" class="rounded"/>
-      <text x="340" y="230" class="text text-bold" font-size="14">Since</text>
-      <text x="340" y="250" class="text" font-size="12">${joinedDate}</text>
+      <text x="340" y="230" class="text text-bold animate animate-5" font-size="14">Since</text>
+      <text x="340" y="250" class="text animate animate-5" font-size="12">${joinedDate}</text>
     </svg>
   `;
 
