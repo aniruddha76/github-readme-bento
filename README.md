@@ -1,30 +1,30 @@
 <h1 align="center">🍱 GitHub README Stats Bento</h1>
 
 <p align="center">
-  <img src="https://github-readme-bento.vercel.app/stats/aniruddha76" alt="Bento Stats Example">
+  <img src="https://img.shields.io/github/stars/aniruddha76/github-readme-bento?style=social" alt="GitHub Stars">
+  <img src="https://img.shields.io/github/forks/aniruddha76/github-readme-bento?style=social" alt="GitHub Forks">
 </p>
 
 <p align="center">
-  Welcome to <strong>GitHub README Stats Bento</strong>! Are your GitHub stats scattered across multiple cards? Say no more! This stylish Bento lets you neatly organize your stats into a single, elegant card for your profile or website. 🎉
+  Welcome to <strong>GitHub README Stats Bento</strong>! Are your GitHub stats scattered across multiple cards? Say no more! This stylish Bento lets you neatly organize your stats into a   single, elegant card for your profile or website. 🎉
+</p>
+
+<p align="center">
+  <img src="https://github-readme-bento.vercel.app/stats/aniruddha76">
 </p>
 
 ---
-## 🌟 Why Choose Bento?
-
-- 🔹 **Unified Stats**: Consolidate your GitHub stats into one stylish card.
-- 🔹 **Easy Integration**: Add it to your GitHub profile or personal website effortlessly.
-- 🔹 **Future Customization**: Exciting customization options are coming soon!
-- 🔹 **Responsive Design**: Looks great on any device.
-- 🔹 **Light & Dark Modes**: Choose between light and dark themes to match your style.
-- 🔹 **Open Source**: Completely free and open source.
-
----
+## Why Choose Bento?
+The problem with traditional GitHub stat cards is that they often scatter information across multiple cards. This Bento solution brings everything together in a single, cohesive format. It’s neat, it’s clean, and it’s easy to integrate!
 
 ## ⚙ Features
 
-- 🔹 **Unified Stats**: Consolidate your GitHub stats into one stylish card.
-- 🔹 **Easy Integration**: Add to your GitHub profile or personal website with ease.
-- 🔹 **Future Customization**: Customization options are coming soon!
+- **Unified Stats**: Consolidate your GitHub stats into one stylish card.
+- **Easy Integration**: Add to your GitHub profile or personal website with ease.
+- **Future Customization**: Customization options are coming soon!
+- **Responsive Design**: Looks great on any device.
+- **Light & Dark Modes**: Choose between light and dark themes to match your style.
+- **Open Source**: Completely free and open source.
 
 ## 🚀 Getting Started
 
@@ -71,19 +71,12 @@ Contributions are welcome! If you have ideas to make this project even better, f
 
 Thanks to these amazing people for their contributions:
 
-- [Contributor 1](https://github.com/contributor1)
-- [Contributor 2](https://github.com/contributor2)
-- [Contributor 3](https://github.com/contributor3)
-
----
+- [Sachinsingh2002](https://github.com/Sachinsingh2002)
 
 ## 🌟 Support
 
 If you like this project, please consider giving it a ⭐ and sharing it with others!
 
-<p align="center">
-  <img src="https://img.shields.io/github/stars/aniruddha76/github-readme-bento?style=social" alt="GitHub Stars">
-  <img src="https://img.shields.io/github/forks/aniruddha76/github-readme-bento?style=social" alt="GitHub Forks">
-</p>
-
 Let's make GitHub profiles more beautiful, one Bento at a time! 🍱✨
+
+---
