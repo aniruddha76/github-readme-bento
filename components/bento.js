@@ -104,6 +104,7 @@ export default async function createBentoSVG(data, theme) {
 
   function getLanguageColor(language) {
     const colors = {
+      // Add other language colors as needed
       HTML: "#e34c26",
       CSS: "#563d7c",
       JavaScript: "#f1e05a",
@@ -113,7 +114,8 @@ export default async function createBentoSVG(data, theme) {
       Python: "#3572A5",
       Vue: "#41b883",
       Ruby: "#701516",
-      // Add other language colors as needed
+      Rust: "#dea584",
+      // "C++": "#f34b7d",
     };
     return colors[language] || "#ccc";
   }
