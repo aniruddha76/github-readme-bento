@@ -1,6 +1,7 @@
 <h1 align="center">🍱 GitHub README Stats Bento</h1>
 
 <p align="center">
+  <img src="https://img.shields.io/github/contributors/aniruddha76/github-readme-bento?color=green" alt="Contributers">
   <img src="https://img.shields.io/github/stars/aniruddha76/github-readme-bento?style=social" alt="GitHub Stars">
   <img src="https://img.shields.io/github/forks/aniruddha76/github-readme-bento?style=social" alt="GitHub Forks">
 </p>
