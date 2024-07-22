@@ -115,6 +115,11 @@ export default async function createBentoSVG(data, theme) {
       Vue: "#41b883",
       Ruby: "#701516",
       Rust: "#dea584",
+      Dockerfile: "#384d54",
+      Shell: "#89e051",
+      Hcl: "#844FBA",
+      Jinja: "#a52a22",
+      Mustache: "#724b3b",
       // "C++": "#f34b7d",
     };
     return colors[language] || "#ccc";
