@@ -69,14 +69,14 @@ export default async function createBentoSVG(data, theme) {
         }
       </style>
 
-      <title>${data.name} Github Stats</title>
+      <title>${data.name || data.login} Github Stats</title>
       
       <rect x="0" y="0" width="429" height="270" fill="${colors.background}" class="rounded"/>
 
       <!-- Username and Bio -->
       <rect x="10" y="10" width="409" height="60" fill="${colors.gridBackground}" class="rounded"/>
-      <text x="20" y="35" class="text text-bold animate animate-1" font-size="18">${data.name}</text>
-      <text x="20" y="55" class="text animate animate-1" font-size="14">${data.bio || "No bio available"}</text>
+      <text x="20" y="35" class="text text-bold animate animate-1" font-size="18">${data.name || data.login}</text>
+      <text x="20" y="55" class="text animate animate-1" font-size="14">${data.bio || "No bio, But I'm awesome"}</text>
       
       <!-- Profile Image -->
       <image href="${imageSrc}" x="10" y="80" width="180" height="180" class="rounded animate animate-2"/>
@@ -120,6 +120,7 @@ export default async function createBentoSVG(data, theme) {
       Hcl: "#844FBA",
       Jinja: "#a52a22",
       Mustache: "#724b3b",
+      Processing: "#0095D8"
       // "C++": "#f34b7d",
     };
     return colors[language] || "#ccc";
