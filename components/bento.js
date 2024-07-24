@@ -169,6 +169,7 @@ export default async function createBentoSVG(data, theme) {
       Jinja: "#a52a22",
       Mustache: "#724b3b",
       Processing: "#0095D8",
+      PHP: "#4F5D95",
       "C++": "#F34C7D",
       "Jupyter Notebook": "#DA5C0B",
     };
